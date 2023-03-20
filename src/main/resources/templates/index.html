@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>제품 관리</title>
+</head>
+<body>
+	<div align="center">
+		<h1>제품 목록</h1>
+		<a href="/new">신 제품 생성</a> <br />
+		<br />
+		<table border="1" cellpadding="10">
+			<thead>
+				<tr>
+					<th>제품 ID</th>
+					<th>명칭</th>
+					<th>상표</th>
+					<th>제조국가</th>
+					<th>가격</th>
+					<th>작업</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="product : ${products}">
+					<td th:text="${product.id}">Product ID</td>
+					<td th:text="${product.name}">Name</td>
+					<td th:text="${product.brand}">Brand</td>
+					<td th:text="${product.madein}">Made in</td>
+					<td th:text="${product.price}">Price</td>
+					<td><a th:href="/@{'/edit/' + ${product.id}}">Edit</a>
+						&nbsp;&nbsp;&nbsp; 
+						<a th:href="/@{'/delete/' + ${product.id}}">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
