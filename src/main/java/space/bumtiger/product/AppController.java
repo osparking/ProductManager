@@ -12,7 +12,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AppController {
 	@Autowired
 	private ProductService service;
-	
+
+	@GetMapping("/new")
+	public String newProductView(Model model) {
+		var product = new Product();
+		model.addAttribute("product", product);
+		return "new_product";
+	}
+
 	@GetMapping("/")
 	public String homePage(Model model) {
 		List<Product> products = service.listAll();
