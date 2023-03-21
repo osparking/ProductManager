@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -13,12 +14,20 @@ public class AppController {
 	@Autowired
 	private ProductService service;
 
-	@PostMapping("/save") 
-	public String saveProduct (Product product){
+	@GetMapping("/edit/{id}")
+	public String editProduct(@PathVariable("id") String idStr, 
+			Model model) {
+		long id = Long.parseLong(idStr);
+		model.addAttribute("product", service.get(id));
+		return "edit_product";
+	}
+
+	@PostMapping("/save")
+	public String saveProduct(Product product) {
 		service.save(product);
 		return "redirect:/";
 	}
-	
+
 	@GetMapping("/new")
 	public String newProductView(Model model) {
 		var product = new Product();
