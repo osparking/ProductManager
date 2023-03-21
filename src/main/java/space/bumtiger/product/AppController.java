@@ -13,6 +13,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class AppController {
 	@Autowired
 	private ProductService service;
+	
+	@GetMapping("/delete/{id}")
+	public String deleteProduct(@PathVariable("id") String idStr, 
+			Model model) {
+		long id = Long.parseLong(idStr);
+		service.delete(id);
+		return "redirect:/";
+	}
 
 	@GetMapping("/edit/{id}")
 	public String editProduct(@PathVariable("id") String idStr, 
