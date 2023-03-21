@@ -16,4 +16,7 @@ public class Product {
   private String brand;
   private String madein;
   private float price;
+  public String getPriceStr() {
+  	return String.format("%,.0f\n", price);
+  }
 }
