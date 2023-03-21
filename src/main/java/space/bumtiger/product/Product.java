@@ -1,6 +1,7 @@
 package space.bumtiger.product;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.relational.core.mapping.Table;
 
 import lombok.Data;
@@ -19,4 +20,10 @@ public class Product {
   public String getPriceStr() {
   	return String.format("%,.0f\n", price);
   }
+  @Transient
+  private String priceStr;
+  public void setPriceStr(String priceStr) {
+  	price = Float.parseFloat(priceStr);
+  }
+  
 }
