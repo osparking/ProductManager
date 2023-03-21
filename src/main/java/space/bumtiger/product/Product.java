@@ -17,13 +17,5 @@ public class Product {
   private String brand;
   private String madein;
   private float price;
-  public String getPriceStr() {
-  	return String.format("%,.0f\n", price);
-  }
-  @Transient
-  private String priceStr;
-  public void setPriceStr(String priceStr) {
-  	price = Float.parseFloat(priceStr);
-  }
   
 }
