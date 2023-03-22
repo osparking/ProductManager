@@ -1,5 +1,15 @@
-
 spring:
+  security:
+    oauth2:
+      client:
+        registration:
+         facebook:
+          clientId: 1152800415385524
+          clientSecret: c5ae55673b5115e22a9613697cfdfc93
+          scope:
+            - email
+            - public_profile
+            
   datasource:
     url: jdbc:mariadb://localhost:3306/sales
     username: root	
