@@ -1,7 +1,8 @@
 package space.bumtiger.product;
 
+import java.math.BigDecimal;
+
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Transient;
 import org.springframework.data.relational.core.mapping.Table;
 
 import lombok.Data;
@@ -16,6 +17,6 @@ public class Product {
   private String name;
   private String brand;
   private String madein;
-  private float price;
+  private BigDecimal price;
   
 }
