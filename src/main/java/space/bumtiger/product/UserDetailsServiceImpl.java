@@ -16,7 +16,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		User user = userRepository.getUserByUsername(username);
 
 		if (user == null) {
-			throw new UsernameNotFoundException("잘못된 유저 이름(username)");
+			String msg = username + "은 존재하지 않는 사용자입니다.";
+			throw new UsernameNotFoundException(msg);
 		}
 		return new ProdUserDetails(user);
 	}
