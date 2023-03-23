@@ -6,6 +6,7 @@
 <title>제품 관리</title>
 </head>
 <body>
+	<h3 th:inline="text">아이디: [[${#httpServletRequest.remoteUser}]]</h3>
 	<div align="center">
 		<h1>제품 목록</h1>
 		<a href="/new">신 제품 생성</a> <br />
