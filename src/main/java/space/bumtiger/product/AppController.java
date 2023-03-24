@@ -6,8 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 public class AppController {
@@ -48,6 +51,11 @@ public class AppController {
 		List<Product> products = service.listAll();
 		model.addAttribute("products", products);
 		return "index";
+	}
+	
+	@ModelAttribute("remoteUser")
+	public Object remoteUser(final HttpServletRequest request) {
+	    return request.getRemoteUser();
 	}
 
 }
