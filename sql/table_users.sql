@@ -5,6 +5,6 @@ CREATE TABLE `users` (
   `username` varchar(45) NOT NULL,
   `password` varchar(64) NOT NULL,
   `role` varchar(45) NOT NULL,
-  `enabled` tinyint(4) DEFAULT NULL,
+  `enabled` tinyint(1) DEFAULT 0,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
