@@ -3,7 +3,6 @@ package space.bumtiger.product;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
-
 import lombok.Data;
 
 @Data
@@ -17,4 +16,6 @@ public class User {
   private String password;
   private String role;
   private boolean enabled;
+  private Provider provider;
+  
 }
