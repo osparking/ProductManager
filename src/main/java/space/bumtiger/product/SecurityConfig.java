@@ -24,6 +24,7 @@ public class SecurityConfig {
 	// @formatter:off
 	@Bean
 	SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+		http.formLogin().loginPage("/login");
 		http.authorizeHttpRequests(
 				(authorize) -> {
 					try {
