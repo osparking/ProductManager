@@ -5,7 +5,19 @@
 <title>로그인 - 상품 관리</title>
 </head>
 <body>
-	<div>
+	<div class="container text-center">
+		<div>
+			<h1>로그인 하세요</h1>
+			<br />
+		</div>
+		<div>
+			<h4>
+				<a th:href="@{/oauth2/authorization/facebook}">페이스북으로 로그인</a>
+			</h4>
+		</div>
+		<div>
+			<p>또는</p>
+		</div>
 		<form th:action="@{/login}" method="post"
 			style="max-width: 400px; margin: 0 auto;">
 			<p>
