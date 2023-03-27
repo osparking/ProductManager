@@ -1,4 +1,4 @@
-package space.bumtiger.product;
+package space.bumtiger.product.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

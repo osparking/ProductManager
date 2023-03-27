@@ -1,9 +1,11 @@
-package space.bumtiger.product;
+package space.bumtiger.product.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
+import space.bumtiger.product.ProdUserDetails;
 
 public class UserDetailsServiceImpl implements UserDetailsService {
 	@Autowired
