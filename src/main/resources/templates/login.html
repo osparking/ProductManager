@@ -22,15 +22,21 @@
 		</div>
 		<form th:action="@{/login}" method="post"
 			style="max-width: 400px; margin: 0 auto;">
-			<p>
-				사용자명: <input type="text" name="username" required />
-			</p>
-			<p>
-				비밀번호: <input type="password" name="password" required />
-			</p>
-			<p>
-				<input type="submit" value="로그인" />
-			</p>
+			<div class="border border-secondary rounded p-3">
+				<div>
+					<p>
+						<input type="text" name="username" required class="form-control" placeholder="유저이름"/>
+					</p>
+				</div>
+				<div>
+					<p>
+						<input type="password" name="password" required class="form-control" placeholder="비밀번호"/>
+					</p>
+				</div>
+				<p>
+					<input type="submit" value="로그인" class="btn btn-primary" />
+				</p>
+			</div>
 		</form>
 	</div>
 </body>
