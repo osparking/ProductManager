@@ -31,6 +31,8 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 			newUser.setUsername(email);
 			newUser.setProvider(Provider.FACEBOOK);
 			newUser.setEnabled(true);
+			newUser.setPassword("(NA)");
+			newUser.setRole("ROLE_USER");
 
 			userRepo.save(newUser);
 		}
