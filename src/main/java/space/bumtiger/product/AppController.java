@@ -52,10 +52,4 @@ public class AppController {
 		model.addAttribute("products", products);
 		return "index";
 	}
-	
-	@ModelAttribute("remoteUser")
-	public Object remoteUser(final HttpServletRequest request) {
-	    return request.getRemoteUser();
-	}
-
 }
