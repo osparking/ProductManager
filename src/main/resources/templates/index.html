@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <meta charset="utf-8" />
 <title>제품 관리</title>
 </head>
 <body>
-	<h3 th:inline="text">아이디: <span th:text="${remoteUser}"></span></h3>
+	<h3 th:inline="text">아이디: <span sec:authentication="name">발견되지 않음</span></h3>
 	<form name="logoutForm" th:hidden="true" th:action="@{/logout}"
 		method="post">
 		<input type="submit" value="로그아웃" />
